@@ -4,7 +4,8 @@
   "description": "API to manage wedding-app",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=test/jest.config.js",
+    "test-coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
