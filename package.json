@@ -1,0 +1,19 @@
+{
+  "name": "wedding-back",
+  "version": "0.0.1",
+  "description": "API to manage wedding-app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --config=jest.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amadridlar/wedding-back.git"
+  },
+  "author": "amadridlar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amadridlar/wedding-back/issues"
+  },
+  "homepage": "https://github.com/amadridlar/wedding-back#readme"
+}
