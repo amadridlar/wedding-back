@@ -1,10 +1,14 @@
-require('colors');
+const color = require('colors');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const rootRoutes = require('./routes/rootRoutes');
 const guestsRoutes = require('./routes/gestsRoutes');
 
-const port = '3000';
+
+const databaseHost = 'localhost';
+const serverPort = '3000';
 const app = express();
 
 // MIDLEWARES
@@ -13,15 +17,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // ROUTES
+app.use('/', rootRoutes);
 app.use('/guests', guestsRoutes);
 
-app.get('/', (req, res) => {
-  res.status(200);
-  res.send({ status: '200', message: 'app is up' });
-});
+// DATABASE
+mongoose.connect(`mongodb://${databaseHost}/wedding-app`);
 
-const server = app.listen(port, () => {
-  console.log(`App is running on port ${port}`.green);
+const server = app.listen(serverPort, () => {
+  console.log(color.green(`App is running on port ${serverPort}`));
 });
 
 module.exports = app;
