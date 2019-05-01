@@ -4,17 +4,18 @@ const controller = {
   newGuest: (req, res) => {
     const guestData = req.body;
     database.saveGuest(guestData, (err, databaseData) => {
-      if (!err || err != null) {
+      if (err !== null) {
         res.status(500);
         res.body({
           status: 'error',
           message: 'database error',
         });
-      } else if (err == null) {
+      } else if (err === null) {
         res.status(200);
         res.body({
-          status: 'sucess',
-          data: databaseData,
+          status: 'success',
+          id: databaseData.id,
+          data: databaseData.guestData,
         });
       }
     });
