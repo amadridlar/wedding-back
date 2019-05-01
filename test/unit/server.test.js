@@ -1,6 +1,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../../src/index');
+const app = require('../../src/index').default;
 
 const { expect } = chai;
 const { server } = app;
@@ -45,6 +45,17 @@ describe('Service Create new gest', () => {
         expect(res.body).to.have.property('lastname').to.be.equal(guestRequestBody.lastname);
         expect(res.body).to.have.property('menu').to.be.equal(guestRequestBody.menu);
         expect(res.body).to.have.property('bus').to.be.equal(guestRequestBody.bus);
+        done();
+      });
+  });
+});
+
+describe('Service get guest information', () => {
+  test('respond with status 200', (done) => {
+    request(`${serverHost}:${serverPort}`)
+      .get('/guests/1234')
+      .end((err, res) => {
+        expect(res).to.have.status(200);
         done();
       });
   });

@@ -2,7 +2,7 @@ module.exports = {
   verbose: true,
   testEnvironment: 'node',
   testMatch: [
-    '**/?(*.)+(spec).js?(x)',
+    '**/?(*.)+(test).js?(x)',
   ],
   collectCoverageFrom: [
     'src/**/*.js',
