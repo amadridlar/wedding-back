@@ -8,7 +8,7 @@ const controller = {
         res.status(500);
         res.body({
           status: 'error',
-          message: 'database error',
+          message: err,
         });
       } else if (err === null) {
         res.status(200);
