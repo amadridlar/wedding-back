@@ -10,7 +10,8 @@ const controller = {
           status: 'error',
           message: err,
         });
-      } else if (err === null) {
+      }
+      if (err === null) {
         res.status(200);
         res.body({
           status: 'success',
