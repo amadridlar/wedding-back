@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "start-dev": "nodemon -L src/index.js",
-    "test": "jest --config=test/jest.config.js",
-    "test-coverage": "jest --coverage",
+    "test": "jest --config=jest.config.js",
+    "test-coverage": "jest --config=jest.config.js --coverage",
     "lint": "eslint -c .eslintrc.json"
   },
   "repository": {
